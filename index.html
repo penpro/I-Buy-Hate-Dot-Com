@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>I Buy Hate — Follow the Money from the T-Shirt to the Federal Register</title>
+<meta name="description" content="An evidence-tiered investigation: how inherited fortunes and anonymized funds finance designated hate groups, purchase both flanks of the debate, and write federal policy — every claim marked documented, reported, or hypothetical.">
+<meta property="og:title" content="I Buy Hate — Follow the Money">
+<meta property="og:description" content="Four designated hate groups helped write a plan for the federal government. That part is printed in the book. An evidence-tiered investigation with the receipts archived.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230a0b0d'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='%23d99a3f' font-family='Georgia'%3E%24%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/site.css?v=11">
+</head>
+<body>
+
+<div id="tip" role="tooltip" aria-hidden="true"></div>
+<div class="scrim" id="scrim"></div>
+
+<aside class="dossier" id="dossier" aria-hidden="true" aria-label="Entity dossier">
+  <div class="dossier-inner" id="dossier-inner"></div>
+</aside>
+
+<!-- ============================================================ masthead -->
+<header class="masthead">
+  <div class="wrap">
+    <p class="eyebrow">An evidence-tiered map · Built to be argued with</p>
+    <h1>Four designated hate groups helped write a plan for the federal government. <em>That part is printed in the book.</em></h1>
+    <p class="standfirst">
+      This investigation began with a small, almost quaint suspicion: that neo-Nazi merch money — the t-shirts,
+      the stickers, the reprinted Reich — was trickling upward into hate-based policy.
+      <strong>What the records showed is more endemic and harder to look at.</strong> The t-shirt sellers are the
+      poor end of a patronage economy. The money starts at the top — inherited banking fortunes, anonymized
+      billion-dollar funds — and flows <em>down</em>, through sworn filings, into designated hate groups, into
+      purpose-built “opposition,” and into the coalition that wrote the playbook. Four of the 54 organizations
+      printed on the Project&nbsp;2025 advisory board carry active hate-group designations. The people funding
+      them never needed the t-shirt money. They have always had more.
+    </p>
+    <p class="standfirst" style="margin-top:18px">
+      Every connection below is marked documented, reported, or hypothetical, and you can switch the hypothesis
+      off. Every wrong guess we made along the way is kept on the page, marked:
+      <a class="inline-link" href="#adversarial">start with what we got wrong</a> — it is how you can trust
+      what we kept.
+    </p>
+    <ul class="legend" id="legend"></ul>
+  </div>
+</header>
+
+<!-- ============================================================ controls -->
+<div class="controls">
+  <div class="wrap" style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;width:100%">
+    <span class="label">Evidence filter</span>
+    <button class="btn" id="mode-all" aria-pressed="true">All · incl. hypothesis</button>
+    <button class="btn warn" id="mode-ab" aria-pressed="false">Documented + reported</button>
+    <button class="btn" id="mode-a" aria-pressed="false">Documented only</button>
+    <span class="spacer"></span>
+    <span class="hint">Hover to trace a path · click any box for sources · keys 1 / 2 / 3</span>
+  </div>
+</div>
+
+<!-- ============================================================ graph -->
+<section class="graph-section">
+  <div class="graph-shell">
+    <svg id="flow" role="img" aria-label="Flow diagram: retail purchases through movement commerce and pooled funds to policy organizations, Project 2025, and enacted policy."></svg>
+  </div>
+  <div class="wrap">
+    <div class="graph-caption" id="graph-caption"></div>
+  </div>
+</section>
+
+<!-- ============================================================ journey -->
+<section class="journey">
+  <div class="wrap">
+    <div class="sec-head" id="journey-head"></div>
+    <div id="journey-steps"></div>
+  </div>
+</section>
+
+<!-- ============================================================ coda -->
+<section class="wrap">
+  <div class="coda" id="coda"></div>
+</section>
+
+<!-- ============================================================ roster -->
+<section class="band">
+  <div class="wrap">
+    <div id="roster"></div>
+  </div>
+</section>
+
+<!-- ============================================================ red team -->
+<section class="band alt">
+  <div class="wrap">
+    <div id="adversarial"></div>
+  </div>
+</section>
+
+<!-- ============================================================ hypothesis lab -->
+<section class="band">
+  <div class="wrap">
+    <div id="hlab"></div>
+  </div>
+</section>
+
+<!-- ============================================================ quote wall -->
+<section class="band alt">
+  <div class="wrap">
+    <div id="quotewall"></div>
+  </div>
+</section>
+
+<!-- ============================================================ ledger -->
+<section class="band alt">
+  <div class="wrap">
+    <div id="ledger"></div>
+  </div>
+</section>
+
+<!-- ============================================================ daf table -->
+<section class="band">
+  <div class="wrap">
+    <div id="daftable"></div>
+  </div>
+</section>
+
+<!-- ============================================================ the citation trace -->
+<section class="band alt">
+  <div class="wrap">
+    <div id="trace"></div>
+  </div>
+</section>
+
+<!-- ============================================================ authors table -->
+<section class="band">
+  <div class="wrap">
+    <div id="authors"></div>
+  </div>
+</section>
+
+<!-- ============================================================ groups: it's not just the SPLC -->
+<section class="band alt">
+  <div class="wrap">
+    <div id="groups"></div>
+  </div>
+</section>
+
+<!-- ============================================================ landscape: adjudicated intent + ancestry -->
+<section class="band">
+  <div class="wrap">
+    <div id="landscape"></div>
+  </div>
+</section>
+
+<!-- ============================================================ undercount -->
+<section class="band alt">
+  <div class="wrap">
+    <div id="undercount"></div>
+  </div>
+</section>
+
+<!-- ============================================================ defunding -->
+<section class="band alt">
+  <div class="wrap">
+    <div id="defunding"></div>
+  </div>
+</section>
+
+<!-- ============================================================ sources -->
+<section class="band">
+  <div class="wrap">
+    <div id="sources"></div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <p>
+      <strong>Method.</strong> Every node and connection on this page carries an evidence tier, stored in
+      <code>data/network.js</code>. Tier A is a primary document. Tier B is credible reporting or a watchdog
+      designation. Tier C is an illustrative structure that is <em>not</em> evidenced for the specific parties shown.
+      Nothing is ever promoted a tier to make the diagram look better.
+    </p>
+    <p>
+      Watchdog designations — including those by the Southern Poverty Law Center — are the assessments of advocacy
+      organizations. They are not legal findings, and the designated organizations dispute them. This site
+      characterizes them as designations everywhere, on purpose. Overclaiming is how an argument built on public
+      records gets thrown out along with the speculation.
+    </p>
+    <p>
+      Sources marked <em>Unverified — check source</em> were drafted from general knowledge and have not been
+      confirmed against the live document. Treat them as a work queue, not as citations. See
+      <code>SOURCING.md</code> for the verification standard and the open task list.
+    </p>
+  </div>
+</footer>
+
+<!-- Bump ?v= when editing any data/js file — the preview pane soft-reloads
+     with cached subresources otherwise. -->
+<script src="data/network.js?v=11"></script>
+<script src="data/journey.js?v=11"></script>
+<script src="data/roster.js?v=11"></script>
+<script src="data/assessment.js?v=11"></script>
+<script src="data/primary.js?v=11"></script>
+<script src="data/groups.js?v=11"></script>
+<script src="data/landscape.js?v=11"></script>
+<script src="data/trace.js?v=11"></script>
+<script src="data/authors.js?v=11"></script>
+<script src="js/flow.js?v=11"></script>
+<script src="js/ui.js?v=11"></script>
+<script src="js/sections.js?v=11"></script>
+</body>
+</html>
