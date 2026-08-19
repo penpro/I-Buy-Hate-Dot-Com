@@ -67,6 +67,51 @@ a { color: inherit; }
 .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 32px; position: relative; z-index: 1; }
 .narrow { max-width: 760px; }
 
+/* ------------------------------------------------------------------ cold open */
+
+.coldopen {
+  border-bottom: 1px solid var(--rule);
+  background:
+    linear-gradient(180deg, rgba(212,87,78,.07), transparent 70%),
+    var(--bg-inset);
+  padding: 44px 0 38px;
+}
+.co-eyebrow {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--tier-b);
+  margin: 0 0 16px;
+}
+.co-head {
+  font-size: clamp(30px, 5vw, 56px);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  color: var(--ink);
+  margin: 0 0 20px;
+  max-width: 20ch;
+}
+.co-body {
+  font-size: 17.5px;
+  line-height: 1.6;
+  color: var(--ink-dim);
+  max-width: 74ch;
+  margin: 0 0 14px;
+}
+.co-body strong { color: var(--ink); font-weight: 600; }
+.co-url {
+  font-family: var(--mono);
+  font-size: clamp(14px, 2vw, 19px);
+  letter-spacing: .04em;
+  color: var(--tier-b);
+  border: 1px solid rgba(217,154,63,.4);
+  display: inline-block;
+  padding: 9px 16px;
+  margin: 10px 0 0;
+}
+
 /* ------------------------------------------------------------------ masthead */
 
 .masthead {
