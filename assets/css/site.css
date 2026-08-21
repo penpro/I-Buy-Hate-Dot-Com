@@ -131,9 +131,25 @@ a { color: inherit; }
   border-left-color: var(--tier-b);
   background: rgba(217,154,63,.06);
 }
-@media (min-width: 1750px) {
-  #nav-drawer { transform: translateX(0); }
-  #nav-toggle { display: none; }
+
+/* When the drawer is open on a wide screen, it pushes content instead of
+   covering it; the centered wraps re-center in the remaining space. */
+body { transition: padding-left .24s cubic-bezier(.4,0,.2,1); }
+@media (min-width: 1200px) {
+  body.nav-open { padding-left: min(320px, 85vw); }
+}
+
+/* Centered reading column on wide screens: prose-heavy sections cap at 1100px
+   and center; the graph, roster and source grids keep the full wrap. */
+@media (min-width: 1240px) {
+  #journey-head, #journey-steps, #coda,
+  #adversarial, #hlab, #quotewall, #ledger, #daftable, #trace, #authors,
+  #groups, #landscape, #undercount, #defunding {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .masthead .wrap, .coldopen .wrap { max-width: 1160px; }
 }
 
 /* ------------------------------------------------------------------ mobile flow */

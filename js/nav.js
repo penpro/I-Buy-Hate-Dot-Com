@@ -55,15 +55,21 @@
 
     function setOpen(open) {
       drawer.classList.toggle("open", open);
+      document.body.classList.toggle("nav-open", open);
       toggle.setAttribute("aria-expanded", String(open));
     }
     toggle.addEventListener("click", function () { setOpen(!drawer.classList.contains("open")); });
     drawer.addEventListener("click", function (e) {
-      if (e.target.tagName === "A" && window.innerWidth < 1750) setOpen(false);
+      /* narrow screens: drawer overlays content, so close after navigating.
+         wide screens: drawer pushes content, so it can stay. */
+      if (e.target.tagName === "A" && window.innerWidth < 1200) setOpen(false);
     });
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape") setOpen(false);
     });
+
+    /* open by default only where there is room to push content aside */
+    if (window.innerWidth >= 1750) setOpen(true);
 
     /* active-section tracking */
     var links = {};
