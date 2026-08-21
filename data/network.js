@@ -206,6 +206,21 @@ window.FH_NETWORK = {
       ]
     },
     {
+      id: "r-cfam", layer: "respectable", tier: "A", value: 8,
+      label: "Center for Family & Human Rights",
+      sub: "C-Fam · UN-focused · SPLC-designated · printed board",
+      summary: "The fourth designated organization on the printed advisory board — smaller, UN-focused, and its president is a credited Mandate contributor.",
+      detail: "C-Fam is the least-known of the four designated organizations printed on the Project 2025 advisory board (pages xi–xii), designated by SPLC since 2013 — a designation it disputes. It operates primarily at the United Nations, working against LGBTQ and reproductive-rights language in international instruments.\n\nIts president, Austin Ruse, is a credited contributor in the Mandate's own front matter. He is also the author of the March 2014 broadcast remark that the 'hard left, human-hating people that run modern universities… should all be taken out and shot' — a quote confirmed by the apology still published on C-Fam's own website, permanently archived (archive.ph/9bAEi). AFA removed him from its airwaves over it.\n\nThis node exists on the diagram because the site's headline says four designated organizations, and all four belong on the picture.",
+      evidence: [
+        { tier: "A", type: "Primary document", title: "Advisory board, Mandate for Leadership pages xi–xii", source: "The Heritage Foundation, 2023 · ISBN 978-0-89195-174-2", url: "https://static.heritage.org/project2025/2025_MandateForLeadership_FULL.pdf",
+          note: "Confirmed present on the printed roster by direct extraction from the PDF text layer. Ruse also appears in the contributors list (printed pp. xxv–xxxii)." },
+        { tier: "A", type: "Self-declaration (archived)", title: "Ruse's 'taken out and shot' apology, on C-Fam's own site", source: "c-fam.org, March 14, 2014 · archived", url: "https://archive.ph/9bAEi",
+          note: "The organization's own domain confirming its president's broadcast remark. No watchdog needed in this chain." },
+        { tier: "B", type: "Watchdog designation", title: "SPLC anti-LGBTQ designation (since 2013)", source: "Southern Poverty Law Center", url: "https://www.splcenter.org/", verify: true,
+          note: "Designation disputed by C-Fam; cite as corroboration, never foundation, per the corroboration ladder." }
+      ]
+    },
+    {
       id: "r-heritage", layer: "respectable", tier: "A", value: 46,
       label: "The Heritage Foundation",
       sub: "Convener and publisher of Project 2025",
@@ -347,6 +362,8 @@ window.FH_NETWORK = {
       note: "Advisory board membership is printed in the document's own front matter. This arrow requires no inference at all." },
     { source: "r-frc",      target: "v-mandate",   value: 12, tier: "A", label: "Advisory board · chapter authorship" },
     { source: "r-cis",      target: "v-mandate",   value: 11, tier: "A", label: "Advisory board · policy input" },
+    { source: "r-cfam",     target: "v-mandate",   value: 8,  tier: "A", label: "Advisory board · contributor credited",
+      note: "Printed on the board (pp. xi–xii); president Austin Ruse credited in the contributors list. Both facts are the book's own front matter." },
     { source: "r-heritage", target: "v-mandate",   value: 30, tier: "A", label: "Convener and publisher" },
     { source: "r-other",    target: "v-mandate",   value: 22, tier: "A", label: "Advisory board" },
     { source: "r-adf",      target: "v-personnel", value: 6,  tier: "B", label: "Personnel pipeline" },

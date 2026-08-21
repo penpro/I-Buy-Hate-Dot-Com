@@ -253,10 +253,18 @@
 
       /* transparent hit rect on top so text never eats the pointer */
       var hit = el("rect", { x: w.x, y: w.y, width: w.w, height: w.h }, "node-hit");
+      hit.setAttribute("tabindex", "0");
+      hit.setAttribute("role", "button");
+      hit.setAttribute("aria-label", w.def.label + " — " + tierName(w.def.tier) + ". Open sources.");
       hit.addEventListener("mouseenter", function (e) { hoverNode(w, e); });
       hit.addEventListener("mousemove", moveTip);
       hit.addEventListener("mouseleave", clearHover);
       hit.addEventListener("click", function () { window.FH.openNode(w.def.id); });
+      hit.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); window.FH.openNode(w.def.id); }
+      });
+      hit.addEventListener("focus", function () { hoverNode(w, { clientX: 40, clientY: 120 }); });
+      hit.addEventListener("blur", clearHover);
       g.appendChild(hit);
 
       gNodes.appendChild(g);
@@ -266,6 +274,34 @@
       L.byId[state.selected].el.classList.add("selected");
     }
     updateCaption(L);
+    renderMobileList(L);
+  }
+
+  /* Mobile alternative: the same filtered relationships as a layered card
+     list, shown under 880px instead of a sideways-scrolling diagram. */
+  function renderMobileList(L) {
+    var host = document.getElementById("mobile-flow");
+    if (!host) return;
+    var h = "";
+    L.cols.forEach(function (c, i) {
+      h += '<div class="mf-layer"><div class="mf-layer-head">' +
+        '<span class="mf-num">' + String(i + 1).padStart(2, "0") + '</span>' + c.def.label + '</div>';
+      c.items.forEach(function (w) {
+        var outs = w.out.map(function (l) {
+          return '<span class="mf-out t-' + l.def.tier.toLowerCase() + '">→ ' + l.t.def.label + '</span>';
+        }).join("");
+        h += '<button class="mf-node t-' + w.def.tier.toLowerCase() + '" data-node="' + w.id + '">' +
+          '<span class="mf-tier">' + tierName(w.def.tier) + '</span>' +
+          '<span class="mf-name">' + w.def.label + '</span>' +
+          (outs ? '<span class="mf-outs">' + outs + '</span>' : '') +
+          '</button>';
+      });
+      h += '</div>';
+    });
+    host.innerHTML = h;
+    host.querySelectorAll("[data-node]").forEach(function (b) {
+      b.addEventListener("click", function () { window.FH.openNode(b.getAttribute("data-node")); });
+    });
   }
 
   /* ---------------------------------------------------------------- hover */
@@ -332,6 +368,10 @@
     tip.classList.add("on");
     moveTip(e);
   }
+
+  /* tooltip must never outlive the graph interaction */
+  window.addEventListener("scroll", function () { tip.classList.remove("on"); clearHover(); }, { passive: true });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") { tip.classList.remove("on"); clearHover(); } });
 
   function moveTip(e) {
     var pad = 16;
